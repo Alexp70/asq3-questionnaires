@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="el">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ASQ-3 Ερωτηματολόγιο 36 μηνών</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <p class="kicker">ASQ-3</p>
+        <h1>Ερωτηματολόγιο 36 μηνών</h1>
+        <p class="subtitle">Για ηλικία 34 μηνών + 16 ημερών έως 38 μηνών + 30 ημερών</p>
+      </div>
+      <div class="actions">
+        <button type="button" id="printBtn" class="button primary">Εκτύπωση</button>
+        <button type="button" id="resetBtn" class="button">Καθαρισμός</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="intro band">
+        <div>
+          <h2>Οδηγίες</h2>
+          <p>Παρακάτω θα βρείτε ερωτήσεις με δραστηριότητες που μπορεί να κάνει το παιδί σας. Κάποιες μπορεί να μην τις έχει κάνει ακόμα, ενώ κάποιες άλλες μπορεί να τις κάνει ήδη.</p>
+        </div>
+        <ul>
+          <li>Δοκιμάστε κάθε δραστηριότητα με το παιδί πριν απαντήσετε.</li>
+          <li>Συμπληρώστε το ερωτηματολόγιο σαν παιχνίδι για εσάς και το παιδί σας.</li>
+          <li>Φροντίστε το παιδί να είναι ταϊσμένο και ξεκούραστο.</li>
+        </ul>
+      </section>
+
+      <form id="asqForm">
+        <section class="panel">
+          <h2>Στοιχεία παιδιού</h2>
+          <div class="grid">
+            <label>
+              Όνομα παιδιού
+              <input name="childName" autocomplete="name">
+            </label>
+            <label>
+              Ημερομηνία γέννησης
+              <input name="birthDate" type="date">
+            </label>
+            <label>
+              Ημερομηνία συμπλήρωσης
+              <input name="completedDate" type="date">
+            </label>
+            <label>
+              Συμπληρώνεται από
+              <input name="completedBy">
+            </label>
+            <label>
+              Τηλέφωνο ή email γονέα
+              <input name="parentContact" autocomplete="email">
+            </label>
+          </div>
+        </section>
+
+        <div id="sections"></div>
+
+        <section class="panel overall">
+          <h2>Συνολικά</h2>
+          <div id="overallQuestions" class="overall-list"></div>
+        </section>
+
+        <section class="panel submit-panel">
+          <h2>Αποστολή στον παιδίατρο</h2>
+          <label class="consent">
+            <input type="checkbox" id="consentInput">
+            <span>Συμφωνώ να αποσταλούν οι απαντήσεις και η βαθμολογία στον παιδίατρο.</span>
+          </label>
+          <button type="button" id="sendBtn" class="button primary">Αποστολή αποτελεσμάτων</button>
+          <p id="submitStatus" class="submit-status" role="status"></p>
+        </section>
+      </form>
+
+      <aside class="results" aria-live="polite">
+        <div>
+          <p class="kicker">Αυτόματη βαθμολόγηση</p>
+          <h2>Αποτελέσματα</h2>
+          <p id="completionText" class="muted">Απαντήστε στις ερωτήσεις για να εμφανιστεί πλήρης βαθμολογία.</p>
+        </div>
+        <div id="scoreRows" class="score-rows"></div>
+        <div class="result-note">
+          <strong>Σημείωση:</strong> Η βαθμολογία βοηθά στην οργάνωση της κλινικής εικόνας, αλλά δεν αποτελεί διάγνωση. Οι απαντήσεις στην ενότητα «Συνολικά» και η κλινική εκτίμηση χρειάζεται να συνεκτιμώνται.
+        </div>
+      </aside>
+    </main>
+
+    <script src="36mo.js"></script>
+  </body>
+</html>
